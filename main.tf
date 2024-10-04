@@ -26,7 +26,7 @@ resource "aws_instance" "name" {
       "sudo apt install pkg-config -y",
       "pip install mysqlclient",
       "pip  install -r requirements.txt",
-      "python /home/ubuntu/nlm2/manage.py makemgrations",
+      "python /home/ubuntu/nlm2/manage.py makemigrations",
       "python /home/ubuntu/nlm2/manage.py migrate",
       "python /home/ubuntu/nlm2/manage.py runserver 0.0.0.0:8000"
     ]
