@@ -17,17 +17,18 @@ resource "aws_instance" "name" {
       "sudo apt-get upgrade -y",
       "sudo apt install python3-pip -y",
       "sudo apt install python3-venv -y",
-      "sudo apt install python3-virtualenv -y",
       "python3 -m venv /home/ubuntu/venv",
       ". /home/ubuntu/venv/bin/activate",
-      "git clone https://github.com/deva0510/Django-WebApp.git",
-      "cd Django-WebApp",
+      "git clone https://github.com/gsreddy1870/nlm2.git",
+      "cd nlm2",
       "pip install django",
-      "pip install django-crispy-forms",
-      "pip install easy-pil",
-      "python /home/ubuntu/Django-WebApp/manage.py makemgrations",
-      "python /home/ubuntu/Django-WebApp/manage.py migrate",
-      "python /home/ubuntu/Django-WebApp/manage.py runserver 0.0.0.0:8000"
+      "sudo apt-get install libmysqlclient-dev -y",
+      "sudo apt install pkg-config -y",
+      "pip install mysqlclient",
+      "pip  install -r requirements.txt",
+      "python /home/ubuntu/nlm2/manage.py makemgrations",
+      "python /home/ubuntu/nlm2/manage.py migrate",
+      "python /home/ubuntu/nlm2/manage.py runserver 0.0.0.0:8000"
     ]
     connection {
       type        = "ssh"
